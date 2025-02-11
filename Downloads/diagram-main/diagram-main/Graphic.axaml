@@ -1,0 +1,42 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="diagramShubenok.Graphic"
+		x:CompileBindings="False"
+		xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+        Title="Graphic">
+	<Grid
+		DataContext=""
+		RowDefinitions="30,*">
+		<StackPanel
+			Grid.Row="0">
+			<Button
+				Content="Назад"
+				Click="Button_Click">
+				</Button>
+			</StackPanel>
+		<StackPanel
+			Grid.Row="1">
+		<TabControl>
+			<TabItem Header="График">
+			<lvc:CartesianChart
+				Width="800"
+				Height="500"
+				Series="{Binding Series}"
+				Name="chart">
+			</lvc:CartesianChart>
+			</TabItem>
+			<TabItem Header="Точечная диаграмма">
+				<lvc:CartesianChart
+					Width="800"
+					Height="500"
+					Series="{Binding RoundSeries}"
+					Name="chart2">
+				</lvc:CartesianChart>
+			</TabItem>
+			</TabControl>
+		</StackPanel>
+	</Grid>
+</Window>
