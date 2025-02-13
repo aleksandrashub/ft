@@ -1,0 +1,157 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demoMatModel1.MainWindow"
+        Title="demoMatModel1">
+    <Grid
+		Name="grid"
+		RowDefinitions="64,*"
+		ColumnDefinitions="*,15,*">
+		<StackPanel
+			Orientation="Horizontal"
+			Background="#e1f4c7"
+			Grid.Row="0"
+			Grid.ColumnSpan="3"
+			Grid.Column="0">
+			<Ellipse Fill="#78b24b" 
+					 Margin="5,0,0,0"
+					 VerticalAlignment="Center"
+					 HorizontalAlignment="Left"
+					 Width="54" 
+					 Height="54" />
+			<Border 
+				Margin="20,0,0,0"
+				Height="35"
+				Width="500"
+				VerticalAlignment="Center"
+				BorderThickness="1" 
+				Background="White" 
+				CornerRadius="10">
+			<TextBlock
+				Margin="10,0,0,0"
+				VerticalAlignment="Center"
+				Text="Организационная структура">
+				</TextBlock>
+				</Border>
+		</StackPanel>
+		<StackPanel
+			Background="#d9d9d9"
+			Margin="30,30,0,0"
+			Grid.Column="0"
+			Grid.Row="1">
+			</StackPanel>
+		<StackPanel
+			Background="#d9d9d9"
+			Margin="0,30,30,0"
+			Grid.Column="2"
+			Grid.Row="1">
+			<ListBox
+				Height="700"
+				Name="list"
+				Background="#d9d9d9"
+				Width="620">
+				<ListBox.ItemTemplate>
+					<DataTemplate
+						x:CompileBindings="False">
+						<Grid
+							ColumnDefinitions="200,5,*"
+							RowDefinitions="30,30,20,20">
+							<Border
+								BorderThickness="5"
+								BorderBrush="#e1f4c7"
+								CornerRadius="3"
+								Grid.ColumnSpan="3"
+								Grid.RowSpan="4">
+							<StackPanel
+								Grid.ColumnSpan="3"
+								Grid.Row="0"
+								Grid.RowSpan="4"
+								Background="#e1f4c7">
+
+							</StackPanel>
+						</Border>
+							<StackPanel
+								Margin="5,5,0,0"
+								Grid.Column="0"
+								Grid.Row="0"
+								Width="200"
+								Height="30"
+								VerticalAlignment="Center"
+								Orientation="Horizontal">
+								<TextBlock
+									Width="200"
+									TextWrapping="WrapWithOverflow"
+									FontSize="10"
+									Text="{Binding IdPodrazdNavigation.Name}">
+								</TextBlock>
+							</StackPanel>
+							<StackPanel
+								VerticalAlignment="Center"
+							Grid.Column="1"
+						Grid.Row="0">
+								<TextBlock
+								FontSize="10"
+								Text=" - ">
+								</TextBlock>  
+							</StackPanel>
+							<StackPanel
+								VerticalAlignment="Center"
+								Grid.Column="2"
+								Margin="0,5,0,0"
+								Height="30"
+								Grid.Row="0">
+								<TextBlock
+									VerticalAlignment="Center"
+									TextWrapping="WrapWithOverflow"
+									FontSize="10"
+								Text="{Binding IdDolzhnostNavigation.Name}">
+								</TextBlock>
+							</StackPanel>
+							<StackPanel
+								Margin="5,0,0,0"
+								VerticalAlignment="Center"
+								Grid.ColumnSpan="3"
+							Grid.Column="0"
+								Grid.Row="1">
+								<TextBlock
+									Text="{Binding Fio}">
+								</TextBlock>
+							</StackPanel>
+							<StackPanel
+								Margin="5,0,0,0"
+								Grid.ColumnSpan="3"
+								Grid.Column="0"
+								Grid.Row="2">
+								<TextBlock
+									FontSize="12"
+								Text="{Binding LichnPhone}">
+								</TextBlock>
+							</StackPanel>
+							<StackPanel
+								Grid.Column="2"
+								Grid.Row="2">
+								<TextBlock
+									FontSize="12"
+								Text="{Binding Mail}">
+								</TextBlock>
+							</StackPanel>
+							<StackPanel
+								
+								Margin="5,0,0,0"
+									Grid.ColumnSpan="3"
+									Grid.Column="0"
+									Grid.Row="3">
+								<TextBlock
+									FontSize="12"
+									Text="{Binding Cabinet}">
+								</TextBlock>
+							</StackPanel>
+						</Grid>
+						</DataTemplate>
+				</ListBox.ItemTemplate>
+				</ListBox>
+		</StackPanel>
+		</Grid>
+</Window>
